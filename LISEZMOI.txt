@@ -1,0 +1,64 @@
+APPLICATION DE SUIVI DES DORTOIRS D'OISEAUX GRANIVORES
+=========================================================
+
+CONTENU DU DOSSIER
+-------------------
+- app.py              : le code de l'application
+- requirements.txt    : la liste des bibliothèques nécessaires
+- observations.json   : se crée automatiquement (positions des oiseaux)
+- sites_confirmes.json: se crée automatiquement (dortoirs confirmés au drone)
+
+
+INSTALLATION (une seule fois)
+-------------------------------
+1. Copie ce dossier "suivi-oiseaux" dans ton dossier PROG_PYTHON.
+2. Ouvre VS Code sur ce dossier.
+3. Ouvre un terminal dans VS Code (menu Terminal > Nouveau terminal).
+4. Installe les bibliothèques nécessaires avec cette commande :
+
+   pip install -r requirements.txt
+
+
+LANCER L'APPLICATION
+----------------------
+Dans le terminal VS Code, tape :
+
+   streamlit run app.py
+
+Une page va s'ouvrir automatiquement dans ton navigateur (sinon, ouvre
+l'adresse affichée dans le terminal, en général http://localhost:8501).
+
+Pour arrêter l'application : retourne dans le terminal et fais Ctrl+C.
+
+
+UTILISATION
+-------------
+L'application a 4 onglets :
+
+1. "Nouvelle position"   : enregistrer la position d'un oiseau tagué
+                            (Q1 à Q5), avec date, heure et source.
+
+2. "Carte"                : affiche toutes les positions sur une carte,
+                            avec un lien direct vers Google Maps pour
+                            chaque point.
+
+3. "Confirmation drone"   : une fois le dortoir repéré sur le terrain,
+                            on y enregistre l'effectif estimé par le
+                            drone et des notes. Le site apparaît ensuite
+                            sur la carte avec un cercle noir.
+
+4. "Historique"           : la liste de toutes les observations, avec
+                            possibilité de filtrer par oiseau.
+
+Les données sont sauvegardées automatiquement dans deux fichiers
+(observations.json et sites_confirmes.json) à chaque enregistrement,
+donc rien n'est perdu si tu fermes l'application.
+
+
+PROCHAINES ÉTAPES POSSIBLES
+------------------------------
+- Exporter les données vers Excel (.xlsx)
+- Ajouter une alerte automatique (SMS/WhatsApp) quand plusieurs oiseaux
+  convergent vers un même point
+- Relier directement une station de réception (au lieu de la saisie
+  manuelle)
